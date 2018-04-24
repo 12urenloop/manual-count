@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background: #333 url('12ul.png') no-repeat 30px center;
+  background: #333 url('static/12ul.png') no-repeat 30px center;
   height: 120px;
   position: relative;
 }

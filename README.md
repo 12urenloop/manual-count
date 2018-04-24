@@ -1,3 +1,12 @@
 # manual-count
 
-Small web application that serves as a backup counting system.
+How to run this crap?
+
+```
+pip install -r requirements.txt
+
+python ./init_db
+
+export FLASK_APP=main.py
+flask run
+```

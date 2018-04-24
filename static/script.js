@@ -103,7 +103,6 @@ function addLap(teamId) {
     if(!team) return;
 
     team.laps = parseInt(team.laps) + 1;
-    console.log(team);
     $('#' + teamId + ' .laps').text(team.laps + ' rondjes');
 
     var queue = JSON.parse(storage.getItem('requestQueue') || "[]");
@@ -130,7 +129,7 @@ function processQueue() {
         setTimeout(processQueue, 1000);
     }
 
-    $.ajax('submit.php', {
+    $.ajax('add_lap', {
         type: 'POST',
         data: queue[0],
         error: errorHandler,
@@ -154,7 +153,7 @@ $(function() {
     $('#viewSwitcher').click(function() {
         currentView = currentView == 0 ? 1 : 0;
         createView(currentView);
-        $(this).text('Surface ' + (currentView + 1) + '/2');
+        $(this).text('Tablet ' + (currentView + 1) + '/2');
     });
 
 	$('#adminButton').click(function() {

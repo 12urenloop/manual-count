@@ -5,14 +5,14 @@
     <title>12Urenloop - Manuele telling</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/style.css" media="screen" rel="stylesheet" type="text/css" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="fastclick.js"></script>
+    <script type="text/javascript" src="static/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="static/script.js"></script>
+    <script type="text/javascript" src="static/fastclick.js"></script>
     <script type="text/javascript">
-        var teams = (<?= json_encode(getTeams()); ?>);
+        var teams = ({{ teams|safe }});
     window.addEventListener('load', function() {
             new FastClick(document.body);
     }, false);
@@ -21,7 +21,7 @@
 <body ontouchmove="event.preventDefault();" >
     <header>
         <h1>Manuele telling</h1>
-        <button id="viewSwitcher">iPad 1/2</button>
+        <button id="viewSwitcher">Tablet 1/2</button>
         <button id="adminButton">Admin</button>
     </header>
     <div id="content">
@@ -30,7 +30,7 @@
     </div>
     <div id="overlay">
         <div id="overlayContent">
-            <a id="closeModal"><img src="modal_close.png"/></a>
+            <a id="closeModal"><img src="static/modal_close.png"/></a>
             <p><button id="clearButton">Reset local state</button></p>
             <h1>Lastest error</h1>
             <p id="overlayError"></p>
