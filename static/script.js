@@ -29,7 +29,7 @@ function initStorage() {
 function createView(viewNumber) {
     var teams = JSON.parse(storage.getItem('teams')),
         num_buttons_per_view = Math.ceil(teams.length / 2),
-        base = viewNumber * num_buttons,
+        base = viewNumber * num_buttons_per_view,
         container = $('#buttonHolder');
 
     container.empty();
