@@ -1,5 +1,4 @@
 var DELAY = 30; // delay to prevent accidental double taps
-var BUTTONS_PER_VIEW = 7
 var error = '';
 
 // Detect local storage
@@ -29,11 +28,12 @@ function initStorage() {
 
 function createView(viewNumber) {
     var teams = JSON.parse(storage.getItem('teams')),
-        base = viewNumber * BUTTONS_PER_VIEW,
+        num_buttons_per_view = Math.ceil(teams.length / 2),
+        base = viewNumber * num_buttons,
         container = $('#buttonHolder');
 
     container.empty();
-    for (var i = base; i < teams.length && i < base + BUTTONS_PER_VIEW; i++) {
+    for (var i = base; i < teams.length && i < base + num_buttons_per_view; i++) {
         (function(teamName) {
             var team = JSON.parse(storage.getItem(teamName));
 
