@@ -10,12 +10,8 @@
 
     <script type="text/javascript" src="static/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="static/script.js"></script>
-    <script type="text/javascript" src="static/fastclick.js"></script>
     <script type="text/javascript">
         var teams = ({{ teams|safe }});
-    window.addEventListener('load', function() {
-            new FastClick(document.body);
-    }, false);
     </script>
 </head>
 <body ontouchmove="event.preventDefault();" >
